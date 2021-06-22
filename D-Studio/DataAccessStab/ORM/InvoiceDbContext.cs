@@ -12,6 +12,7 @@ namespace DataAccess
     {
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
+            //необходимо сконфигурировать строку подключения под конкретную машину
             if (optionsBuilder.IsConfigured) return;
             var connectionString =
                 @"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Users\User\InvoiceDB.mdf;Integrated Security=True;Connect Timeout=30;Initial Catalog=InvoiceDB";

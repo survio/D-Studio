@@ -12,10 +12,10 @@ namespace InvoiceApi.Services
     {
         public  InvoiceService()
         {
-            useCasesAPI = new UseCasesAPI(new InvoiceRepository(new InvoiceDbContext()));
-        }
-        private UseCasesAPI useCasesAPI;
-     
+            useCasesAPI = new UseCasesAPI(new Csv()); //здесь указывать какой репозиторий использовать Stab, CSV, EF
+        }                                                      //new InvoiceRepository(new InvoiceDbContext())
+        private UseCasesAPI useCasesAPI;                       //new Csv()
+                                                               //new Stab() -просто заглушка на этап разработки
 
         public IEnumerable<Invoice> GetAll(InvoiceFilterParameters filterParameters, PageParameters pageParameters)
         {
